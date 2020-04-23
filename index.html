@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Code Quiz</title>
 </head>
 <body>
-    <h1> Coding Quiz Challenge </h1>
+    <div class = "container-fluid mt-6" id = "homepage">
+        <div class= "row">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+                <h1> Coding Quiz Challenge </h1>
+                <h5> Have you studied? Do you know what's going on in your programming class? Here's a quiz about Javascript to test your knowledge. There is a time limit of 60 seconds. For each wrong answer, you will be penalized 10 seconds from the timer. Don't let the timer hit 0, or its GAME OVER. Ready? Let's begin!
+                </h5>
+                <button type="button" class="btn btn-primary btn-lg">Start Quiz!</button>
+            </div>
+            <div class = "col-md-2"></div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
