@@ -1,3 +1,9 @@
-h1 {
+
+body {
+    font-family: 'Lato', sans-serif;
     text-align: center;
+}
+
+.btn:hover {
+    background-color: blueviolet;
 }
