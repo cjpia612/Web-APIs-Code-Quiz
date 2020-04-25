@@ -31,19 +31,34 @@ var questions = [
     }
 
 ];
+var startBtn = document.getElementById("startBtn");
 var timer = document.getElementById("timer");
+var seconds = 61;
+
+startBtn.addEventListener("click", function (){
+
+    function startTimer() {
+        var countdownTimer = setInterval(function (){
+            seconds--;
+            timer.textContent = "Timer:" + seconds;
+    
+            if( seconds === 0) {
+                clearInterval(countdownTimer);
+            }
+        }, 1000);
+    }
+    startTimer();
+})
 
 
 
 
-for (var i=0; i < questions.length; i++ ) {
-    var answer= print(questions[i].q);
-
-}
 
 
+// for (var i=0; i < questions.length; i++ ) {
+//     var answer= print(questions[i].q);
 
-
+// }
 
 
 
@@ -51,7 +66,10 @@ for (var i=0; i < questions.length; i++ ) {
 
 
 
-// On the homepage, there will be a greeting describing the quiz. When the Start button is clicked it will begin the quiz
+
+
+
+
 // Upon clicking the Start button, it will change to the first question displayed with 4 answer choices. 
 // If they choose the right answer, it moves on to the next question and displays Correct! underneath. 
 // If they choose the wrong answer, it moves on to the next question, but deducts 10 seconds from the timer. 
