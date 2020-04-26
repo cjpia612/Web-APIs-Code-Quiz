@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Code Quiz</title>
-</head>
-<body>
+ </head>
+  <body>
     <ul class="nav">
       <li class="nav-item">
-          <a class="nav-link" href="#">View Highscores</a>
+          <a class="nav-link" href="highscores.html">View Highscores</a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
           <div class="nav-link" id="timer"> Timer </div>
       </li>
     </ul>
 
     <div class = "container-fluid mt-4" id = "homepage">
         <div class= "row justify-content-center">
-         <div class = "col-md-8">
+        <div class = "col-md-8">
             <h1> 
               New Girl Quiz 
             </h1>
@@ -37,16 +37,24 @@
 
     <div class = "d-none" id = "quiz">
       <div class= "row justify-content-center">
-       <div class = "col-md-8">
+        <div class = "col-md-8">
           <h3 id = "question-head"></h3>
           <button class = "choices btn-primary btn-lg" id = "button1"></button>
           <button class = "choices btn-primary btn-lg" id = "button2"></button>
           <button class = "choices btn-primary btn-lg" id = "button3"></button>
           <button class = "choices btn-primary btn-lg" id = "button4"></button>
-       </div>
+        </div>
       </div>
     </div>
 
+    <div class = "d-none" id = "highscore">
+      <div class= "row justify-content-center">
+        <div class = "col-md-8">
+          <h3 id = "highscore-head"></h3>
+          <iframe src="https://giphy.com/embed/Tef5Kw1oXARP2" width="480" height="344" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/new-girl-thumbs-up-schmidt-Tef5Kw1oXARP2">via GIPHY</a></p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
