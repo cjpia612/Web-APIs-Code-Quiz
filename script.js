@@ -68,11 +68,77 @@ function startQuestions() {
     button4.textContent = questions[i].ch[3];
 };
 
+button1.addEventListener("click", function(event) {
+    event.stopPropagation();
+    var correctAnswer = questions[i].a;
+    console.log (event.target.textContent);
+    console.log(score);
 
-// why does the question function jump straight to the last item in the index instead of the first? 
+    if (i < questions.length -1) {
+        i++;
+    }
+    if (event.target.textContent === correctAnswer) {
+        startQuestions();
+        score++;
+    } else {
+        startQuestions();
+        
+    }
+});
 
-// If they choose the right answer, it moves on to the next question and displays Correct! underneath. 
-// If they choose the wrong answer, it moves on to the next question, but deducts 10 seconds from the timer. 
+button2.addEventListener("click", function(event) {
+    event.stopPropagation();
+    var correctAnswer = questions[i].a;
+    console.log (event.target.textContent);
+    console.log(score)
+
+    if (i < questions.length -1) {
+        i++;
+    }
+    if (event.target.textContent === correctAnswer) {
+        startQuestions();
+        score++;
+    } else {
+        startQuestions();
+        
+    }
+});
+
+button3.addEventListener("click", function(event) {
+    event.stopPropagation();
+    var correctAnswer = questions[i].a;
+    console.log (event.target.textContent);
+    console.log(score)
+
+    if (i < questions.length -1) {
+        i++;
+    }
+    if (event.target.textContent === correctAnswer) {
+        startQuestions();
+        score++;
+    } else {
+        startQuestions();
+        
+    }
+});
+
+button4.addEventListener("click", function(event) {
+    event.stopPropagation();
+    var correctAnswer = questions[i].a;
+    console.log (event.target.textContent);
+    console.log(score)
+
+    if (i < questions.length -1) {
+        i++;
+    }
+    if (event.target.textContent === correctAnswer) {
+        startQuestions();
+        score++;
+    } else {
+        startQuestions();
+        
+    }
+});
 // After all questions are answered, the timer stops and whatever number it stops on is the user's score.
 // If timer hits 0, the page will display Game Over. 
 // The page will display the user's score and an input field to write Initials down. 
