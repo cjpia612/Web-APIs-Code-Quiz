@@ -46,13 +46,14 @@ var score= 0;
 
 startBtn.addEventListener("click", function (){
   homepage.className = "d-none";
-  quiz.className = "container-fluid mt-4"
+  quiz.className = "container-fluid mt-4";
     function startTimer() {
         var countdownTimer = setInterval(function (){
             seconds--;
             timer.textContent = "Timer:" + seconds;
             if( seconds === 0) {
                 clearInterval(countdownTimer);
+                gameOver();
             }
         }, 1000);
     }
@@ -71,8 +72,7 @@ function startQuestions() {
 button1.addEventListener("click", function(event) {
     event.stopPropagation();
     var correctAnswer = questions[i].a;
-    console.log (event.target.textContent);
-    console.log(score);
+    // console.log (event.target.textContent);
 
     if (i < questions.length -1) {
         i++;
@@ -82,17 +82,18 @@ button1.addEventListener("click", function(event) {
         score++;
     } else {
         startQuestions();
-        
+        seconds -= 10;
     }
+   
+    // console.log(score);
 });
 
 button2.addEventListener("click", function(event) {
     event.stopPropagation();
     var correctAnswer = questions[i].a;
-    console.log (event.target.textContent);
-    console.log(score)
-
+    // console.log (event.target.textContent);
     if (i < questions.length -1) {
+
         i++;
     }
     if (event.target.textContent === correctAnswer) {
@@ -100,15 +101,16 @@ button2.addEventListener("click", function(event) {
         score++;
     } else {
         startQuestions();
-        
+        seconds -= 10;
     }
+    
+    // console.log(score);
 });
 
 button3.addEventListener("click", function(event) {
     event.stopPropagation();
     var correctAnswer = questions[i].a;
-    console.log (event.target.textContent);
-    console.log(score)
+    // console.log (event.target.textContent);
 
     if (i < questions.length -1) {
         i++;
@@ -118,16 +120,16 @@ button3.addEventListener("click", function(event) {
         score++;
     } else {
         startQuestions();
-        
+        seconds -= 10;
     }
+    
+    // console.log(score);
 });
 
 button4.addEventListener("click", function(event) {
     event.stopPropagation();
     var correctAnswer = questions[i].a;
-    console.log (event.target.textContent);
-    console.log(score)
-
+    // console.log (event.target.textContent);
     if (i < questions.length -1) {
         i++;
     }
@@ -136,10 +138,22 @@ button4.addEventListener("click", function(event) {
         score++;
     } else {
         startQuestions();
-        
+        seconds -= 10;
     }
+    
+    // console.log(score);
 });
-// After all questions are answered, the timer stops and whatever number it stops on is the user's score.
-// If timer hits 0, the page will display Game Over. 
+
+var highscore = document.getElementById ("highscore");
+var highscoreHead = document.getElementById ("highscore-head");
+function gameOver () {
+    if (seconds === 0) {
+        quiz.className = "d-none";
+        highscore.className = "container-fluid mt-4"
+        highscoreHead.textContent = "Who's that girl/guy? It's YOU! The End. You got " + score + " right. Please make your way to the highscores tab and input your score and initials! Great Job!";
+    }
+}
+
+
 // The page will display the user's score and an input field to write Initials down. 
 // the user's initials and score will be recorded to the highscore list. 
