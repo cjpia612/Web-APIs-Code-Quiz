@@ -1,7 +1,7 @@
 var questions = [
     {
        q: " What is the apartment number for the loft Jess, Nick, Schmidt, and Winston live in?",
-       ch: ["204", "4D", "7B", "3"], 
+       ch: ["204", "4D", "7B", "30"], 
        a: "4D"
     },
     {
@@ -34,43 +34,43 @@ var questions = [
 var startBtn = document.getElementById("startBtn");
 var timer = document.getElementById("timer");
 var seconds = 61;
+var questionHead = document.getElementById("question-head");
+var homepage = document.getElementById("homepage");
+var quiz = document.getElementById ("quiz");
+var button1 = document.getElementById ("button1");
+var button2 = document.getElementById ("button2");
+var button3 = document.getElementById ("button3");
+var button4 = document.getElementById ("button4");
+var i= 0;
+var score= 0;
 
 startBtn.addEventListener("click", function (){
-
+  homepage.className = "d-none";
+  quiz.className = "container-fluid mt-4"
     function startTimer() {
         var countdownTimer = setInterval(function (){
             seconds--;
             timer.textContent = "Timer:" + seconds;
-    
             if( seconds === 0) {
                 clearInterval(countdownTimer);
             }
         }, 1000);
     }
     startTimer();
+    startQuestions();
 })
 
+function startQuestions() {
+    questionHead.textContent = questions[i].q;
+    button1.textContent = questions[i].ch[0];
+    button2.textContent = questions[i].ch[1];
+    button3.textContent = questions[i].ch[2];
+    button4.textContent = questions[i].ch[3];
+};
 
 
+// why does the question function jump straight to the last item in the index instead of the first? 
 
-
-
-// for (var i=0; i < questions.length; i++ ) {
-//     var answer= print(questions[i].q);
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-// Upon clicking the Start button, it will change to the first question displayed with 4 answer choices. 
 // If they choose the right answer, it moves on to the next question and displays Correct! underneath. 
 // If they choose the wrong answer, it moves on to the next question, but deducts 10 seconds from the timer. 
 // After all questions are answered, the timer stops and whatever number it stops on is the user's score.
